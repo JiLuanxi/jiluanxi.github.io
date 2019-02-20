@@ -236,8 +236,9 @@
 <p>如果需要自定义域名，需要：</p>
 <ol>
 <li>在域名服务提供商处，做好域名解析。</li>
-<li>在master分支下， CNAME 文件（无后缀），内容直接写注册的域名即可。</li>
+<li>在 <code>public</code> 文件夹下，创建 CNAME 文件（无后缀），内容直接写注册的域名。不要直接在master分支下创建，否则会在执行 <code>hexo deploy</code> 后被覆盖掉。</li>
 </ol>
+<p>PS：这里涉及到各个目录的功能，在后面的文章会再介绍。</p>
 <p><img src="http://pn7o6deks.bkt.clouddn.com/%E6%B7%BB%E5%8A%A0CNAME.png" alt="创建CNAME文件"></p>
 <h2 id="几点建议"><a href="#几点建议" class="headerlink" title="几点建议"></a>几点建议</h2><ol>
 <li><strong>千万</strong> 不要使用记事本打开配置文件<code>_config.yml</code>。记事本不会保存为<code>UTF-8</code>的编码。如果你的博客名称是中文，会在网站上显示成乱码。建议使用<a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>或者<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a> 打开。</li>
