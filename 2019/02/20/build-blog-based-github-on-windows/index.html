@@ -230,7 +230,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建Repo"><span class="toc-text">创建Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建站"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几点建议"><span class="toc-text">几点建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文档"><span class="toc-text">参考文档</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建Repo"><span class="toc-text">创建Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建站"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意点"><span class="toc-text">注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文档"><span class="toc-text">参考文档</span></a></li></ol>
     </div>
   </div>
 
@@ -278,9 +278,13 @@
 <li>在Repo的 <code>master</code> 分支下，创建 <code>CNAME</code> 文件，内容是自己注册的域名。</li>
 </ol>
 <p><img src="http://pn7o6deks.bkt.clouddn.com/%E6%B7%BB%E5%8A%A0CNAME.png" alt="创建CNAME文件"></p>
-<h2 id="几点建议"><a href="#几点建议" class="headerlink" title="几点建议"></a>几点建议</h2><ol>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
 <li><strong>千万</strong> 不要使用记事本打开配置文件<code>_config.yml</code>。记事本不会保存为<code>UTF-8</code>的编码。如果你的博客名称是中文，会在网站上显示成乱码。建议使用<a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>或者<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a> 打开。</li>
+<li>在执行<code>hexo deploy</code>命令时，可能会遇到警告提示：</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> lib/pjax/jquery.pjax.min.js.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br></pre></td></tr></table></figure>
+<p>在文件入库前，js文件中的 LF 将会被 CRLF 替换，并提交到仓库。工作目录下的文件中，换行符依然时 LF。</p>
+<p>这个提示是由于Windows和Unix的换行符差异，导致执行命令时需要进行换行符转换。这也是Git确保跨平台协作进行的操作，无伤大雅。</p>
 <hr>
 <p>本文仅简单介绍安装、部署流程，不涉及配置文件、主题修改、Markdown语法等内容。</p>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
