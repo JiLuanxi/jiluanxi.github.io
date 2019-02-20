@@ -236,7 +236,7 @@
 <p>如果需要自定义域名，需要：</p>
 <ol>
 <li>在域名服务提供商处，做好域名解析。</li>
-<li>在 <code>public</code> 文件夹下，创建 CNAME 文件（无后缀），内容直接写注册的域名。不要直接在master分支下创建，否则会在执行 <code>hexo deploy</code> 后被覆盖掉。</li>
+<li>在 <code>public</code> 文件夹（第一次执行过<code>hexo deploy</code>后会生成）下，创建 CNAME 文件（无后缀），内容直接写注册的域名。不要直接在master分支下创建，否则会在执行 <code>hexo deploy</code> 后被覆盖掉。</li>
 </ol>
 <p>PS：这里涉及到各个目录的功能，在后面的文章会再介绍。</p>
 <p><img src="http://pn7o6deks.bkt.clouddn.com/%E6%B7%BB%E5%8A%A0CNAME.png" alt="创建CNAME文件"></p>
